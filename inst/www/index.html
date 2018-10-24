@@ -14,35 +14,7 @@
       $("#submitbutton").on("click", function(){
         //arguments
 
-        var gene_gile = $("#csvfile_1")[0].files[0];
-        var meta_file = $("#csvfile_2")[0].files[0];
-        
-        if(!gene_gile){
-          alert("No file selected.");
-          return;
-        }
-        if(!meta_file){
-          alert("No file selected.");
-          return;
-        }
-
-
-        //disable the button during upload
-        $("#submitbutton").attr("disabled", "disabled");
-        //perform the request
-        var req = $("#plotdiv").rplot("PCA2_plot", {
-          file_1 : gene_gile,
-          file_2 : meta_file
-        })
-        //if R returns an error, alert the error message
-        req.fail(function(){
-          alert("Server error: " + req.responseText);
-        });
-        
-        //after request complete, re-enable the button 
-        req.always(function(){
-          $("#submitbutton").removeAttr("disabled")
-        });        
+        alert("a;dfkas;ldfka")
       });       
     });
     </script>
