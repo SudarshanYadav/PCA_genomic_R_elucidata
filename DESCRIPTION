@@ -1,0 +1,10 @@
+Package: genomicPCA
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.1.0
+Author: Sudarshan Yadav <sudarshanyadav1997@gmail.com>
+Maintainer: Sudarshan Yadav <sudarshanyadav1997@gmail.com>
+Description: The function extracts two principal components from genomic data and returns an interactive plot.
+License: No License
+Encoding: UTF-8
+LazyData: true

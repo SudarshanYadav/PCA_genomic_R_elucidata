@@ -1,0 +1,162 @@
+library(genomicPCA)
+genomic_file <- read.csv('Assignment-2_gene_data.csv')
+genomic_file <- read.csv('data/Assignment-2_gene_data.csv')
+head(genomic_file
+)
+transpose(genomic_file)
+t(genomic_file)
+head(genomic_file)
+prcomp(genomic_file,center=True,scale. = True)
+prcomp(genomic_file,center=TRUE,scale. = TRUE)
+genomic_file[:,1:4]
+genomic_file[,1:4]
+genomic_file[,3:]
+genomic_file[,3:4]
+genomic_file[,3:.]
+genomic_file[,3:]
+genomic_file[,3]
+genomic_file[,3:]
+genomic_file[,3:12]
+prcomp(genomic_file[,3:9],center=TRUE,scale. = TRUE)
+head(genomic_file)
+head(genomic_file)
+genomic_file.t = t(genomic_file)
+genomic_file.t
+head(genomic_file.t)
+colnames(genomic_file.t)
+colnames(genomic_file)
+rownames(genomic_file)
+data_t = t(genomic_file)
+head(data_t)
+colnames(data_t)
+row.names.data_t
+data_t.row.names
+names(data_t)
+rm(ls)
+rm = ls()
+genomic_file = read.csv('Assignment-2 Meta data sheet .csv')
+genomic_file = read.csv('data/Assignment-2 Meta data sheet .csv')
+genomic_file
+t(genomic_file)
+colnames(genomic_file)
+rownames(genomic_file)
+colnames(t(genomic_file))
+rownames(genomic_file)
+colnames(t(genomic_file))
+as.data.frame(t(genomic_file))
+t_genomic_gile = as.data.frame(t(genomic_file))
+t_genomic_gile
+rownames(t_genomic_gile)
+colnames(t_genomic_gile)
+colnames(genomic_file)
+genomic_file = read.csv('data/Assignment-2_gene_data.csv')
+t_genomic_gile = as.data.frame(t(genomic_file))
+t_genomic_gile
+genomic_file = read.csv('data/Assignment-2_gene_data.csv')
+t_genomic_file = as.data.frame(t(genomic_file))
+str(t_genomic_file)
+prin_comp = prcomp(t_genomic_file,scale. = T)
+colnames(t_genomic_file)
+type(t_genomic_file[1])
+str(t_genomic_file[1])
+genomic_file[:,1:]
+genomic_file[,1:]
+genomic_file[,1:0]
+genomic_file[,1]
+genomic_file[,0]
+genomic_file[,2]
+genomic_file[,2:0]
+genomic_file[,2]
+genomic_file[,-1]
+genomic_file[,-2]
+genomic_file = genomic_file[,-1]
+t_genomic_file = t(genomic_file)
+t_genomic_file =as.data.frame(t(genomic_file))
+prcomp(t_genomic_file)
+head(t_genomic_file)
+colnames(t_genomic_file)
+colnames(t_genomic_file)[0]
+colnames(t_genomic_file)[0,]
+colnames(t_genomic_file)[0]
+colnames(t_genomic_file)[,0]
+colnames(t_genomic_file)
+colnames(genomic_file)
+str(t_genomic_file)
+rownames(t_genomic_file)
+colnames(genomic_file)
+colnames(t_genomic_file)
+t_genomic_file['v1']
+rownames(genomic_file)
+rownames(genomic_file) = genomic_file$symbol
+colnames(genomic_file)
+genomic_file[1]
+genomic_file[1:0]
+genomic_file[1:]
+genomic_file[1:ncol(genomic_file)]
+genomic_file = unique(genomic_file[1:ncol(genomic_file)])
+genomic_file
+len(genomic_file)
+size(genomic_file)
+genomic_file.size
+genomic_file = unique(t_genomic_file[1:ncol(genomic_file)])
+prcomp(genomic_file)
+genomic_file
+prcomp(genomic_file[1:ncol(genomic_file)])
+prcomp(genomic_file[2:ncol(genomic_file)])
+prcomp(genomic_file[2:3
+]
+}
+prcomp(genomic_file[2:3])
+prcomp(genomic_file[3:3])
+prcomp(genomic_file[4:5])
+genomic_filep[4]
+genomic_file[4]
+colnames(genomic_file)
+rownames(genomic_file)
+genomic_file
+genomic_file[1,:]
+genomic_file[1,:]
+genomic_file[1,]
+rownames(genomic_file) <- genomic_file[1,]
+genomic_file = read.csv("Assignment-2_gene_data.csv")
+genomic_file = read.csv("DATA/Assignment-2_gene_data.csv")
+genomic_file
+rownames(genomic_file)
+genomic_file[,1:ncol(genomic_file)]
+genomic_gile = genomic_file[,1:ncol(genomic_file)]
+genomic_file
+genomic_gile = genomic_file[,2:ncol(genomic_file)]
+genomic_file
+genomic_gile = genomic_file[,2:3]
+genomic_file
+genomic_file[,2:3]
+genomic_file[,2:ncol(genomic_file)]
+data = genomic_file[,2:ncol(genomic_file)]
+data
+data = as.data.frame(t(genomic_file))
+data
+data
+rownames(data)
+colnames(data)
+data[0,0]
+data[1,1]
+data[1,1;2]
+data[1,1:2]
+data <- data[2:,]
+data <- data[2:,]
+data <- data[2:,1:ncol(data)]
+data
+data[0]
+data[1,1]
+data[1,1:2]
+data[2:,1:2]
+data[2:nrow(data),1:2]
+data[2:nrow(data),1:ncol(data)]
+data_v2 = data[2:nrow(data),1:ncol(data)]
+data_v2
+data_v2[1
+]
+data_v2[1,1]
+data_v2[1,1:2]
+data_v3 = data_v2[,2:ncol(data_v2)]
+data_v3[1,1:2]
