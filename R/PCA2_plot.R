@@ -6,7 +6,6 @@
 #' @param file_1 main genomic file
 #' @param file_2 metadata file
 PCA2_plot <- function(file_1,file_2,...) {
-  library(factoextra)
   library(ggfortify)
 
   if(!grepl(".csv$", file_1)){
@@ -20,8 +19,8 @@ PCA2_plot <- function(file_1,file_2,...) {
   metadata = read.csv(file_2)
 
   #make gene names as row names
-  rownames(genomic_data) = make.names(genomic_data[,1],unique = TRUE)
-  genomic_data = genomic_data[,2:ncol(genomic_data)]
+  rownames(genomic_data) = make.names(genomic_data[,2],unique = TRUE)
+  genomic_data = genomic_data[,3:ncol(genomic_data)]
   genomic_data = as.data.frame(sapply(genomic_data,as.numeric))
   genomic_data = na.omit(genomic_data)
   t_genomic_data = as.data.frame(t(genomic_data))
@@ -38,3 +37,4 @@ PCA2_plot <- function(file_1,file_2,...) {
   autoplot(t_genomic_data.pca,data=metadata,colour="Time")
 
 }
+
