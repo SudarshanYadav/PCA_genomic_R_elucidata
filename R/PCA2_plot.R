@@ -6,11 +6,6 @@
 #' @param file_1 main genomic file
 #' @param file_2 metadata file
 PCA2_plot <- function(file_1,file_2,loadings=FALSE,...) {
-
-  list.of.packages <- c("plotly")
-  new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-  if(length(new.packages)) install.packages(new.packages)
-
   library(plotly)
 
   if(!grepl(".csv$", file_1)){

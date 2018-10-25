@@ -36,7 +36,7 @@
         }, function(session){
         $("#plotdiv1").attr('src', session.getFileURL("pca_graph_1.html"));
       }).fail(function(text){
-        alert("Error: " + req.responseText);
+        alert("Error: " + req_1.responseText);
       }).always(function(){
         btn.removeAttr("disabled");
       });
@@ -48,13 +48,13 @@
         }, function(session){
         $("#plotdiv2").attr('src', session.getFileURL("pca_graph_2.html"));
       }).fail(function(text){
-        alert("Error: " + req.responseText);
+        alert("Error: " + req_2.responseText);
       }).always(function(){
         btn.removeAttr("disabled");
       });
 
 
-    //if R returns an error, alert the error message
+		//if R returns an error, alert the error message
         req_1.fail(function(){
           alert("Server error: " + req_1.responseText);
         });
