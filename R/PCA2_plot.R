@@ -36,10 +36,21 @@ PCA2_plot <- function(file_1,file_2,loadings=FALSE,...) {
 
 
   if(!loadings){
-    pca_graph_1 = plot_ly(as.data.frame(genomic_data.pca$x), x = ~PC1, y = ~PC2,text = paste("Gene : ", rownames(genomic_data)))
+    pca_graph_1 = plot_ly(as.data.frame(genomic_data.pca$x), x = ~PC1, y = ~PC2,text = paste("Gene : ", rownames(genomic_data))) %>%
+    layout(
+      title = "Rotate Data into PC axis",
+      )
+
     htmlwidgets::saveWidget(pca_graph_1, "pca_graph_1.html", selfcontained = FALSE)
   }else{
-    pca_graph_2 = plot_ly(as.data.frame(genomic_data.pca[2]), x = ~rotation.PC1, y = ~rotation.PC2,mode="lines+marker",color = as.character(metadata$Time),text = paste("Sample : ",metadata$sIdx,"\nTime : ",metadata$Time," ",metadata$Unit))
+    pca_graph_2 = plot_ly(as.data.frame(genomic_data.pca[2]), x = ~rotation.PC1, y = ~rotation.PC2,mode="lines+marker",color = as.character(metadata$Time),text = paste("Sample : ",metadata$sIdx,"\nTime : ",metadata$Time," ",metadata$Unit)) %>%
+    layout(
+      title = "Loadings graph with Principal Components",
+      scene = list(
+        xaxis = list(title = "PC1"),
+        yaxis = list(title = "PC2")
+
+      ))
     htmlwidgets::saveWidget(pca_graph_2, "pca_graph_2.html", selfcontained = FALSE)
   }
 
