@@ -30,22 +30,42 @@
         //disable the button during upload
         $("#submitbutton").attr("disabled", "disabled");
         //perform the request
-        var req = $("#plotdiv").rplot("PCA2_plot", {
+        var req_1 = $("#plotdiv").rplot("PCA2_plot", {
           file_1 : gene_gile,
           file_2 : meta_file
-        })
-        var req = $("#plotdiv2").rplot("PCA2_plot", {
+        }, function(session){
+        $("#plotdiv1").attr('src', session.getFileURL("pca_graph_1.html"));
+      }).fail(function(text){
+        alert("Error: " + req.responseText);
+      }).always(function(){
+        btn.removeAttr("disabled");
+      });
+        
+        var req_2 = $("#plotdiv2").rplot("PCA2_plot", {
           file_1 : gene_gile,
           file_2 : meta_file,
-          loadings : "TRUE"
-        })
+          loadings : true
+        }, function(session){
+        $("#plotdiv2").attr('src', session.getFileURL("pca_graph_2.html"));
+      }).fail(function(text){
+        alert("Error: " + req.responseText);
+      }).always(function(){
+        btn.removeAttr("disabled");
+      });
+
+
+    //if R returns an error, alert the error message
+        req_1.fail(function(){
+          alert("Server error: " + req_1.responseText);
+        });
+
         //if R returns an error, alert the error message
-        req.fail(function(){
-          alert("Server error: " + req.responseText);
+        req_2.fail(function(){
+          alert("Server error: " + req_2.responseText);
         });
         
         //after request complete, re-enable the button 
-        req.always(function(){
+        req_2.always(function(){
           $("#submitbutton").removeAttr("disabled")
         });        
       });       
@@ -53,17 +73,19 @@
     </script>
 
     <style>
-      #plotdiv {
+      #plotdiv1 {
         position: relative;
         width: 600px;
         height: 400px;
         border: solid gray 1px;
+        float: left
       }
       #plotdiv2 {
         position: relative;
         width: 600px;
         height: 400px;
         border: solid gray 1px;
+        float:right;
       }
     </style>
 
@@ -77,7 +99,7 @@
     <h2>Introduction</h2>
     
     <p>The App takes two file as inputs </p>
-	<ol> <li> main_genomic_file.csv </li> <li> 2. meta_data.csv</li></ol>
+  <ol> <li> main_genomic_file.csv </li> <li> meta_data.csv</li></ol>
     
 
     <h1>Uploading a File</h1>
@@ -89,9 +111,9 @@
     <button id="submitbutton" type="button">Upload CSV file!</button>
     <br> 
 
-    <div id="plotdiv"></div>  
-
-    <div id="plotdiv2"></div> 
+    <iframe id ="plotdiv1" src="about:blank"></iframe>
+    <iframe id ="plotdiv2" src="about:blank"></iframe>
+    
     
   </body>
 </html>

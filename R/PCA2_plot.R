@@ -36,10 +36,14 @@ PCA2_plot <- function(file_1,file_2,loadings=FALSE,...) {
 
 
   if(!loadings){
-    plot_ly(as.data.frame(genomic_data.pca$x), x = ~PC1, y = ~PC2,text = paste("Gene : ", rownames(genomic_data)))
+    pca_graph_1 = plot_ly(as.data.frame(genomic_data.pca$x), x = ~PC1, y = ~PC2,text = paste("Gene : ", rownames(genomic_data)))
+    htmlwidgets::saveWidget(pca_graph_1, "pca_graph_1.html", selfcontained = FALSE)
   }else{
-    plot_ly(as.data.frame(genomic_data.pca[2]), x = ~rotation.PC1, y = ~rotation.PC2,mode="lines+marker",color = as.character(metadata$Time),text = paste("Sample : ",metadata$sIdx,"\nTime : ",metadata$Time," ",metadata$Unit))
+    pca_graph_2 = plot_ly(as.data.frame(genomic_data.pca[2]), x = ~rotation.PC1, y = ~rotation.PC2,mode="lines+marker",color = as.character(metadata$Time),text = paste("Sample : ",metadata$sIdx,"\nTime : ",metadata$Time," ",metadata$Unit))
+    htmlwidgets::saveWidget(pca_graph_2, "pca_graph_2.html", selfcontained = FALSE)
   }
+
+
 
 }
 
