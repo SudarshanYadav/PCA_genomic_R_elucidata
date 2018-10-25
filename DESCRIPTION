@@ -8,3 +8,4 @@ Description: The function extracts two principal components from genomic data an
 License: No License
 Encoding: UTF-8
 LazyData: true
+Imports: plotly
