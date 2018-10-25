@@ -33,7 +33,7 @@ PCA2_plot <- function(file_1,file_2,loadings=FALSE,...) {
   if(!loadings){
     pca_graph_1 = plot_ly(as.data.frame(genomic_data.pca$x), x = ~PC1, y = ~PC2,text = paste("Gene : ", rownames(genomic_data))) %>%
     layout(
-      title = "Rotate Data into PC axis",
+      title = "Rotate Data into PC axis"
       )
 
     htmlwidgets::saveWidget(pca_graph_1, "pca_graph_1.html", selfcontained = FALSE)
