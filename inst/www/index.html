@@ -34,6 +34,11 @@
           file_1 : gene_gile,
           file_2 : meta_file
         })
+        var req = $("#plotdiv2").rplot("PCA2_plot", {
+          file_1 : gene_gile,
+          file_2 : meta_file,
+          loadings : "TRUE"
+        })
         //if R returns an error, alert the error message
         req.fail(function(){
           alert("Server error: " + req.responseText);
@@ -48,7 +53,18 @@
     </script>
 
     <style>
-
+      #plotdiv {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        border: solid gray 1px;
+      }
+      #plotdiv2 {
+        position: relative;
+        width: 600px;
+        height: 400px;
+        border: solid gray 1px;
+      }
     </style>
 
 
@@ -75,7 +91,7 @@
 
     <div id="plotdiv"></div>  
 
-
+    <div id="plotdiv2"></div> 
     
   </body>
 </html>
